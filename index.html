@@ -3,9 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Microsoft Excel</title>
+  <title>Microsoft Excel</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .level-label {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1d6a4a;
+      background: #e6f4ef;
+      border: 1px solid #b2d9c8;
+      border-radius: 4px;
+      padding: 5px 0;
+      margin-bottom: 0.6rem;
+      width: 140px;
+      text-align: center;
+    }
+    .level-label--advanced {
+      color: #8a5c1a;
+      background: #fdf3e3;
+      border-color: #e8c88a;
+    }
+    .courses-section--advanced {
+      background: #f7f9f8;
+      border-top: 2px solid #e0ece6;
+    }
+  </style>
 </head>
 <body>
 
@@ -15,7 +42,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-badge">Instructor-Led · Artifact Sequence Method</div>
-      <h1>Advanced<br><em>Microsoft Excel</em></h1>
+      <h1><em>Microsoft Excel</em></h1>
       <p class="hero-desc">
         Instructor-led courses structured around the Artifact Sequence Approach —
         where participants design and build complete analytical systems in Excel,
@@ -44,7 +71,7 @@
             as both the product of learning and the foundation for the next phase.
           </p>
           <p>
-            In Advanced Excel, each artifact is a working component of a larger
+            In Excel courses, each artifact is a working component of a larger
             analytical system: a structured data foundation, a controlled
             calculation layer, a decision-ready output, or a validated model
             prepared for scale. Participants build each one in sequence, under
@@ -65,7 +92,7 @@
             model holds up when data grows, stays accurate when assumptions are
             updated, and remains clear to anyone who opens it. Reaching that
             standard requires working at the higher cognitive levels that
-            advanced Excel demands: <strong>Analyze, Evaluate, Create.</strong>
+            Excel demands: <strong>Analyze, Evaluate, Create.</strong>
           </p>
           <p>
             Each course is <strong>stand-alone</strong>. Participants arrive with
@@ -129,14 +156,54 @@
   </section>
 
   <!-- ════════════════════════════════════════
-       COURSES GRID
+       BASIC COURSES
   ═════════════════════════════════════════ -->
   <div class="courses-section">
     <div class="section-inner">
-    <div class="courses-header">
-      <h2>Course Topics</h2>
-      <p>Instructor-led courses, each delivered as a complete artifact sequence.</p>
+      <div class="courses-header">
+        <div class="level-label">Essentials</div>
+        <h2>Microsoft Excel</h2>
+        <p>Instructor-led courses for participants building core Excel skills from the ground up.</p>
+      </div>
+
+      <div class="courses-grid">
+
+        <!-- Getting Started with Microsoft Excel -->
+        <a class="card" href="outlines/XLE-GSE-01.pdf" target="_blank">
+          <div class="card-img-wrapper">
+            <img src="outlines/XLE-GSE.png" alt="Getting Started with Microsoft Excel" class="card-img-bg">
+            <img src="outlines/XLE-GSE.png" alt="Getting Started with Microsoft Excel" class="card-img">
+          </div>
+          <div class="card-body">
+            <span class="card-seq">XLE-GSE-01</span>
+            <h3>Getting Started with Microsoft Excel</h3>
+            <p>Build a complete, formula-driven workbook from a structured dataset by navigating the interface, writing essential formulas, formatting data, organizing it as a table, and presenting and protecting the finished workbook.</p>
+            <div class="card-tags">
+              <span class="tag">SUM / AVERAGE / MIN / MAX</span>
+              <span class="tag">Relative / Absolute Refs</span>
+              <span class="tag">Insert → Table</span>
+              <span class="tag">Data → Sort / AutoFilter</span>
+              <span class="tag">Insert → Charts</span>
+              <span class="tag">View → Freeze Panes</span>
+              <span class="tag">Review → Protect Sheet</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
     </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       ADVANCED COURSES
+  ═════════════════════════════════════════ -->
+  <div class="courses-section courses-section--advanced">
+    <div class="section-inner">
+      <div class="courses-header">
+        <div class="level-label level-label--advanced">Advanced</div>
+        <h2>Advanced Microsoft Excel</h2>
+        <p>Instructor-led courses, each delivered as a complete artifact sequence.</p>
+      </div>
 
     <div class="courses-grid">
 
@@ -280,7 +347,7 @@
        FOOTER
   ═════════════════════════════════════════ -->
   <footer>
-    <strong>Advanced Microsoft Excel</strong> &nbsp;·&nbsp; Instructor-Led Program &nbsp;·&nbsp; Artifact Sequence Method
+    <strong>Microsoft Excel</strong> &nbsp;·&nbsp; Instructor-Led Program &nbsp;·&nbsp; Artifact Sequence Method
   </footer>
 
 </body>
