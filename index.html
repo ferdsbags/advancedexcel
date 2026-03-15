@@ -10,6 +10,22 @@
 <body>
 
   <!-- ════════════════════════════════════════
+       TOPBAR
+  ═════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-contact">
+        <a href="https://www.businesscoachphil.com/contact-us" target="_blank" class="topbar-cta">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero band — fixed below topbar, in front of hero, appears when hero is 3/4 hidden -->
+  <div class="hero-band" aria-hidden="true">
+    <div class="hero-band-content"><em>Microsoft Excel</em></div>
+  </div>
+
+  <!-- ════════════════════════════════════════
        HERO
   ═════════════════════════════════════════ -->
   <section class="hero">
@@ -18,9 +34,7 @@
       <h1><em>Microsoft Excel</em></h1>
       <p class="hero-desc">
         Instructor-led courses structured around the Artifact Sequence Approach —
-        where participants design and build complete analytical systems in Excel,
-        not just workbooks. Each course is stand-alone, outcomes-based, and
-        engineered for decision-support.
+        where participants build complete, functional Excel systems from the ground up.
       </p>
     </div>
   </section>
@@ -44,7 +58,7 @@
             as both the product of learning and the foundation for the next phase.
           </p>
           <p>
-            In Excel courses, each artifact is a working component of a larger
+            In Advanced Excel, each artifact is a working component of a larger
             analytical system: a structured data foundation, a controlled
             calculation layer, a decision-ready output, or a validated model
             prepared for scale. Participants build each one in sequence, under
@@ -65,7 +79,7 @@
             model holds up when data grows, stays accurate when assumptions are
             updated, and remains clear to anyone who opens it. Reaching that
             standard requires working at the higher cognitive levels that
-            Excel demands: <strong>Analyze, Evaluate, Create.</strong>
+            advanced Excel demands: <strong>Analyze, Evaluate, Create.</strong>
           </p>
           <p>
             Each course is <strong>stand-alone</strong>. Participants arrive with
@@ -129,73 +143,14 @@
   </section>
 
   <!-- ════════════════════════════════════════
-       BASIC COURSES
+       COURSES GRID
   ═════════════════════════════════════════ -->
   <div class="courses-section">
     <div class="section-inner">
-      <div class="courses-header">
-        <h2>Microsoft Excel Essentials</h2>
-        <p>Instructor-led courses for building core Excel skills from the ground up.</p>
-      </div>
-
-      <div class="courses-grid">
-
-        <!-- Getting Started with Microsoft Excel -->
-        <a class="card" href="outlines/XLE-GSE-01.pdf" target="_blank">
-          <div class="card-img-wrapper">
-            <img src="outlines/XLE-GSE.png" alt="Getting Started with Microsoft Excel" class="card-img-bg">
-            <img src="outlines/XLE-GSE.png" alt="Getting Started with Microsoft Excel" class="card-img">
-          </div>
-          <div class="card-body">
-            <span class="card-seq">XLE-GSE-01</span>
-            <h3>Getting Started with Microsoft Excel</h3>
-            <p>Build a complete, formula-driven workbook from a structured dataset by navigating the interface, writing essential formulas, formatting data, organizing it as a table, and presenting and protecting the finished workbook.</p>
-            <div class="card-tags">
-              <span class="tag">SUM / AVERAGE / MIN / MAX</span>
-              <span class="tag">Relative / Absolute Refs</span>
-              <span class="tag">Insert → Table</span>
-              <span class="tag">Data → Sort / AutoFilter</span>
-              <span class="tag">Insert → Charts</span>
-              <span class="tag">View → Freeze Panes</span>
-              <span class="tag">Review → Protect Sheet</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Working with Data in Excel -->
-        <a class="card" href="outlines/XLE-WDF-01.pdf" target="_blank">
-          <div class="card-img-wrapper">
-            <img src="outlines/XLE-WDF.png" alt="Working with Data in Excel" class="card-img-bg">
-            <img src="outlines/XLE-WDF.png" alt="Working with Data in Excel" class="card-img">
-          </div>
-          <div class="card-body">
-            <span class="card-seq">XLE-WDF-01</span>
-            <h3>Working with Data in Excel</h3>
-            <p>Transform a raw employee records dataset into a clean, classified, and summarized workbook by applying text extraction, date calculations, logical classification with conditional formatting, and formula-driven aggregation — all on a single progressive artifact.</p>
-            <div class="card-tags">
-              <span class="tag">TRIM / LEN / LEFT / RIGHT / MID</span>
-              <span class="tag">TODAY / NOW / YEAR / MONTH</span>
-              <span class="tag">DATEDIF</span>
-              <span class="tag">IF / AND / OR</span>
-              <span class="tag">Conditional Formatting</span>
-              <span class="tag">COUNTIF / SUMIF</span>
-            </div>
-          </div>
-        </a>
-
-      </div>
+    <div class="courses-header">
+      <h2>Course Topics</h2>
+      <p>Instructor-led courses, each delivered as a complete artifact sequence.</p>
     </div>
-  </div>
-
-  <!-- ════════════════════════════════════════
-       ADVANCED COURSES
-  ═════════════════════════════════════════ -->
-  <div class="courses-section courses-section--advanced">
-    <div class="section-inner">
-      <div class="courses-header">
-        <h2>Advanced Microsoft Excel</h2>
-        <p>Instructor-led courses for building advanced analytical systems in Excel.</p>
-      </div>
 
     <div class="courses-grid">
 
@@ -339,8 +294,42 @@
        FOOTER
   ═════════════════════════════════════════ -->
   <footer>
-    <strong>Microsoft Excel</strong> &nbsp;·&nbsp; Instructor-Led Program &nbsp;·&nbsp; Artifact Sequence Method
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Microsoft Excel</strong> &nbsp;·&nbsp; Instructor-Led Program &nbsp;·&nbsp; Artifact Sequence Method
+      </div>
+    </div>
   </footer>
+
+  <script>
+    const hero = document.querySelector('.hero');
+    const band = document.querySelector('.hero-band');
+    const TOPBAR = 38;
+
+    // Threshold: band appears when 3/4 of hero is scrolled past the topbar
+    // i.e. scrollY >= heroTop - TOPBAR + (3/4 * heroHeight)
+    function init() {
+      const heroTop    = hero.getBoundingClientRect().top + window.scrollY;
+      const heroHeight = hero.offsetHeight;
+
+      // Set CSS variable so band height (25%) and margin are computed correctly
+      document.documentElement.style.setProperty('--hero-full-height', heroHeight + 'px');
+
+      // Band appears when 3/4 of hero has scrolled past the topbar
+      // i.e. scrollY >= heroTop - TOPBAR + heroHeight * 0.75
+      const threshold = heroTop - TOPBAR + heroHeight * 0.75;
+
+      function onScroll() {
+        band.classList.toggle('hero-band--visible', window.scrollY >= threshold);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    // Run after fonts/layout settle
+    window.addEventListener('load', init);
+  </script>
 
 </body>
 </html>
